@@ -1,9 +1,15 @@
-#include <linux/kernel.h>
+/*
+ * The kernel module.
+ * Use kbuild to compile.Change protocal in line 31.Change port in line 33.Change hook type in line 59.
+ *
+ * Last modified by Qinyan on 7/10/15.
+ * Email:qq416206@gmail.com
+ *
+ * Created by QinYan on 7/9/15.
+ * Email:qq416206@gmail.com
+ */
+
 #include <linux/module.h>
-#include <linux/netfilter.h>
-#include <linux/netfilter_ipv4.h>
-#include <linux/ip.h>
-#include <linux/tcp.h>
 
 /* This is the structure used to register function */
 struct nf_hook_ops nfho;
@@ -21,9 +27,9 @@ static unsigned int hook_func(unsigned int hooknum,
     iph = ip_hdr(skb);
     tcph = (void *)iph+iph->ihl*4;
 
-    if (iph->protocol==IPPROTO_TCP)
+    if (iph->protocol == IPPROTO_TCP)
     {
-        if (tcph->dest==htons(8080) || tcph->dest==htons(80))
+        if (tcph->dest == htons(8080) || tcph->dest == htons(80))
         {
             printk(KERN_INFO "Push packet from %d.%d.%d.%d\n", ((unsigned char *)&iph->saddr)[0],
                                                                ((unsigned char *)&iph->saddr)[1],
@@ -49,8 +55,7 @@ int init_module(void)
     printk(KERN_INFO "-----My Netfilter Kernel Module Start-----");
 
     nfho.hook = hook_func;
-    nfho.hooknum = NF_INET_POST_ROUTING;
-    //nfho.hooknum = NF_INET_PRE_ROUTING;
+    nfho.hooknum = NF_INET_POST_ROUTING;  //nfho.hooknum = NF_INET_PRE_ROUTING;
     nfho.pf = PF_INET;
     nfho.priority = NF_IP_PRI_FIRST;
 	
