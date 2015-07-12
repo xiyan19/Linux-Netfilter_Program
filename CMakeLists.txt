@@ -1,7 +1,6 @@
 cmake_minimum_required(VERSION 3.2)
-project(Linux_Netfilter_Program)
+project(Linux-Netfilter_Program)
 
-# Import extra kernel src: linux-3.18.17!!!
 include_directories(/usr/local/include)
 link_directories(/usr/local/lib)
 

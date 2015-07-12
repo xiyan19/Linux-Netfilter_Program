@@ -17,6 +17,8 @@ Second,you should install 3 dependent packages in **_{Program Path}/dependents_*
 
 You may need add "**_#include <stdint.h>_**" to **_libnetfilter_queue/libnetfilter_queue.h_** and add "**_#include <netinet/in.h>_**" to **_netfilter.h_**.
 
+Then,you should change kernel module path in your system in **_src/Application/main.c_** line 99,or you can comment line 98,99,100,161,162,163 and load the kernel module yourself.!!!!!!!!!!!!!!!!!!!
+
 
 ### My email
 
