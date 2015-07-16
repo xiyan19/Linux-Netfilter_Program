@@ -25,6 +25,8 @@ All the filtering rule will be saved in **_./filterlist_** file, you can change 
 
 You can see the program running infomation in **_./log_** file.
 
+If you have any question, you can contact me by email.
+
 
 ### My email
 
