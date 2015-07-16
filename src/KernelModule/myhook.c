@@ -1,9 +1,9 @@
 /*
  * The Kernel Module
  *
- * Use kbuild to compile.Change protocal in line 40.Change port in line 42.Change hook type in line 70.
+ * Use "kbuild" to compile. Protocal in line 40. Port in line 42. Hook type in line 70.
  *
- * Last modified by Qinyan on 7/12/15.
+ * Last modified by Qinyan on 7/13/15.
  * Email:qq416206@gmail.com
  *
  * Created by QinYan on 7/9/15.
@@ -41,10 +41,10 @@ static unsigned int hook_func(unsigned int hooknum,
     {
         if (tcph->dest == htons(8080) || tcph->dest == htons(80))
         {
-            printk(KERN_INFO "Push packet from %d.%d.%d.%d\n", ((unsigned char *)&iph->saddr)[0],
-                                                               ((unsigned char *)&iph->saddr)[1],
-                                                               ((unsigned char *)&iph->saddr)[2],
-                                                               ((unsigned char *)&iph->saddr)[3]);
+            printk(KERN_INFO "Push packet from %d.%d.%d.%d\n", ((unsigned char *)&iph->daddr)[0],
+                                                               ((unsigned char *)&iph->daddr)[1],
+                                                               ((unsigned char *)&iph->daddr)[2],
+                                                               ((unsigned char *)&iph->daddr)[3]);
 
             return NF_QUEUE;
         }
