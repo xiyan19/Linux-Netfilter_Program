@@ -15,7 +15,7 @@ The program will auto load and unload this kernel module.
 
 Second, you should install 3 dependent packages in **_{Program Path}/dependents_**.
 
-You may need add "**_#include <stdint.h>_**" to **_libnetfilter_queue/libnetfilter_queue.h_** and add "**_#include <netinet/in.h>_**" to **_netfilter.h_**.
+You may need add "**_#include<stdint.h>_**" to **_libnetfilter_queue/libnetfilter_queue.h_** and add "**_#include<netinet/in.h>_**" to **_netfilter.h_**.
 
 Then, you should change kernel module path in your system in **_src/Application/main.c_** line 303, or you can comment line 302,303,304,378,379 and load the kernel module yourself.
 
