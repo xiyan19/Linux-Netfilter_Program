@@ -1,3 +1,5 @@
+
+
 # Linux Netfilter Program (7-17-2015)
 
 A Simple program use netfilter hook to filter designated incoming/outgoing packets.
@@ -19,7 +21,7 @@ You may need add "**_#include \<stdint.h\>_**" to **_libnetfilter_queue/libnetfi
 
 Then, you should change kernel module path in your system in **_src/Application/main.c_** line 303, or you can comment line 302,303,304,378,379 and load the kernel module yourself.
 
-Now, you can run this program by executing**_./Linux_Netfilter_Program_**, and you can use **-i** to add ip address and use **__-h__** to add hostname(it will be resolved to ip address).
+Now, you can run this program by executing**_./Linux_Netfilter_Program_**, and you can use **-i** to add ip address and use **__-h__** to add hostname(it will be resolved to ip address). Press **_Q_** to stop the program.
 
 All the filtering rule will be saved in **_./filterlist_** file, you can change it by modifying this file.
 
